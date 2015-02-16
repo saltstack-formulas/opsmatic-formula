@@ -1,18 +1,18 @@
 {% set opsmatic = salt['grains.filter_by']({
     'default': {
-        'config': '/etc/opsmatic-agent.conf'
-    },
-    'Debian': {
-        'config': '/etc/opsmatic-agent.conf'
+        'config': '/etc/opsmatic-agent.conf',
+        'version': 'latest',
+        'name': 'opsmatic-agent'
     },
     'RedHat': {
-        'config': '/etc/opsmatic-agent.conf'
+        'config': '/etc/opsmatic-agent.conf',
+        'version': '1.0.241-1',
+        'name': 'opsmatic-agent'
     },
-    'CentOS': {
-        'config': '/etc/opsmatic-agent.conf'
-    },
-    'Gentoo': {
-        'config': '/etc/opsmatic-agent.conf'
+    'Debian': {
+        'config': '/etc/opsmatic-agent.conf',
+        'version': '1.0.261',
+        'name': 'opsmatic-agent-sysv'
     },
 },
 merge=salt['pillar.get']('opsmatic:lookup'), default='default') %}
