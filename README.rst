@@ -25,11 +25,11 @@ Usage
 =====
 On salt minion, run the following::
 
-  salt-call sls.state opsmatic
+  salt-call state.sls opsmatic
 
 Or to install the agent on all minions, run on the master::
 
-  salt '*' sls.state opsmatic
+  salt '*' state.sls opsmatic
 
 We're locking the version of opsmatic to ``1.0.241-1`` here. You can set ``version: latest`` in ``install-opsmatic-agent`` state if you wish.
 
